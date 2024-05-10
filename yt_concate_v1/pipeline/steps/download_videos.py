@@ -11,7 +11,7 @@ class DownloadVideos(Step):
         # print(len(data))
         yt_set = set([found.yt for found in data])  #set的作用為把重複的yt(captions)給刪除
         print("videos to download=", len(yt_set))
-        for yt in yt_set:  #found = Found(yt, text, time)
+        for yt in yt_set:  #found = Found(yt, text, time, end_time)
             url = yt.url
 
             if utils.video_file_exists(yt):

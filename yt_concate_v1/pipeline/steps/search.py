@@ -15,7 +15,9 @@ class Search(Step):
                 if search_word in caption["text"]:
                     text = caption["text"]
                     time = caption["start"]
-                    f = Found(yt, text, time)
+                    duration = caption["duration"]
+                    end_time = time + duration
+                    f = Found(yt, text, time, end_time)
                     found.append(f)  #因為append只能每次append一個東西
         print(found)
         print(len(found))
